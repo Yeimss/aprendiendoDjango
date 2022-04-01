@@ -1,0 +1,57 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{%static 'css/styles.css'%}">
+    <title>
+        {% block title %}
+        <!-- titulo de cada pagina -->
+        {% endblock %}
+
+    </title>
+</head>
+
+<body>
+    <header>
+        <div id="logotipo">
+            <!-- logo django -->
+            <img src="{%static 'images/logo.png'%}" alt=""/>
+            <h1>sitio web con Django</h1>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li>
+                <a href="/inicio">Inicio</a>
+            </li>
+            <li>
+                <a href="/hola_mundo">Hola Mundo</a>
+            </li>
+        </ul>
+    </nav>
+    <div class="barra">
+        <span class="esquina_izq"></span>
+        <span class="relleno_barra"></span>
+        <span class="esquina_der"></span>
+    </div>
+
+    <main id="content">
+        <div class="box">
+            {%block content%}
+                <!-- codigo que viene de templates -->
+                <h3>contenido del bloque original</h3>
+            {%endblock%}
+        </div>
+    </main>
+
+    <footer>
+        master en python &copy; James Herrera
+    </footer>
+</body>
+
+</html>
