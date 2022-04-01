@@ -9,6 +9,10 @@
 {%block content%}
 <h1 class="title">Hola mundo con Django!!</h1>
 <h3>Soy James Herrera</h3>
+{% comment %} 
+el block.super sirve para usar las etiquetas que están por defecto 
+en en dicho blocke en el layout (lo hereda)
+{% endcomment %}
 {{block.super}}
 
 {%endblock%}

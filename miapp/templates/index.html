@@ -4,8 +4,46 @@
     {%endblock%}
 
     {%block content%}
+    {% comment %} este es un comentario html {% endcomment %}
     <h1 class="title">Inicio</h1>
-    
-    <p>Años pares hasta el 2050</p>
+    <br/>
+    <p>algunos lenguajes de programación: </p>
+    <ul>
+        {% for lenguaje in lenguajes %}
+            <li>{{forloop.counter}}. {{lenguaje}}</li>
+            {%empty%}
+            <p> no hay lenguajes para mostrar</p>
+        {% endfor %}
+    </ul>
+    <br>
+    {% if nombre %}
+        <p>el papa de los pica piedra es</p>
+        <p>{{nombre}}</p>
+    {% endif %}
+
     {%endblock%}
+    {% comment %} 
+
+                elementos para los for en Django
+
+    {% empty %} -> sirve para saber si dicho elemento está vacío 
+    {{forloop.first}} -> retorna true si el elemento es el primero de la lista
+    {{forloop.last}} -> retorna true si el elemento es el ultimo de la lista
+    {{forloop.counter}} -> retorna el numero del elemento en la lista desde 1
+    {{forloop.counter0}} -> retorna el numero del elemento en la lista desde 0
+    {{forloop.revcounter}} -> contador inverso 
+
+
+
+
+    
+    
+    
+    
+    
+
+    
+    
+    
+    {% endcomment %}
     

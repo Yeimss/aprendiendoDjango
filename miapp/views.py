@@ -7,7 +7,18 @@ from django.shortcuts import render,HttpResponse, redirect
 #        ||     ||      ||
 #mvt = Modelo Template Vista
 def index(request):
-    return render(request,'index.html')
+    años=""
+    year=2021
+    for i in range (year, 2051):
+        if year % 2 == 0:
+            años+=f"<li>{str(year)}</li>"
+
+    nombre='pedro pica piedra'
+    lenguajes=['php', 'python', 'C', 'Java']
+    return render(request,'index.html',{
+        'nombre':nombre,
+        'lenguajes':lenguajes
+    })
 
 
 def hola_mundo(request, redirigir=0):
