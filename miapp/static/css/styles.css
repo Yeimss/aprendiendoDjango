@@ -135,3 +135,11 @@ footer{
     margin: 0 auto;
     letter-spacing: 2px;
 }
+.redirect{
+    text-decoration: none;
+    color: #1B1E1F;
+}
+.redirect:hover{
+    text-decoration: underline;
+    color: #2ba977;
+}

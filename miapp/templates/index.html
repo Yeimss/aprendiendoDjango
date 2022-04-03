@@ -1,4 +1,5 @@
     {%extends 'layout.html'%}
+
     {%block title%}
         Inicio
     {%endblock%}
@@ -10,18 +11,26 @@
     <p>algunos lenguajes de programación: </p>
     <ul>
         {% for lenguaje in lenguajes %}
-            <li>{{forloop.counter}}. {{lenguaje}}</li>
-            {%empty%}
-            <p> no hay lenguajes para mostrar</p>
+        <li>{{forloop.counter}}. {{lenguaje}}</li>
+        {%empty%}
+        <p> no hay lenguajes para mostrar</p>
         {% endfor %}
     </ul>
+    
     <br>
     {% if nombre %}
         <p>el papa de los pica piedra es</p>
         <p>{{nombre}}</p>
     {% endif %}
+    <br/>
+    <hr/>
+    <br/>
 
+    {% include 'fecha.html' with bienvenido="Crito te da la bienvenida, " %}
     {%endblock%}
+
+
+
     {% comment %} 
 
                 elementos para los for en Django

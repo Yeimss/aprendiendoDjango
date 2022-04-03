@@ -1,0 +1,12 @@
+<h1>Estamos en el 2021</h1>
+<h1>{{bienvenido}} {{nombre}}</h1>
+<p>años pares desde 2022 hasta 2050: </p>
+    <ul>
+        {%for year in years%}
+            {% if year|divisibleby:2%}
+                <li>{{year}}</li>
+            {% endif %}
+            {%empty%}
+            <p>no hay años para mostrar</p>
+        {%endfor%}
+    </ul>

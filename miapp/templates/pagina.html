@@ -1,0 +1,48 @@
+{% extends 'layout.html'%}
+
+{% block title  %}
+    pagina de pruebas    
+{% endblock  %}
+
+{% block content %}
+    <p>Creado por & James Herrera</p>
+    <p>{{"este String no tendra espacios??????"|cut:" "}}</p>
+    <p>
+        {{texto|default:'no hay nada en esta variable'}}
+    </p>
+    <p>
+        {{"texto en mayusculas con upper"|upper}}
+    </p>
+    <p>
+        {{"TEXTO EN MINUSCULAS CON lower"|lower}}
+    </p>
+    <p>
+        {{lista|random}}
+    </p>
+    <p>
+        {{"<h1>texto entre un h1 pero se le quita la etiqueta h1</h1>"|striptags}}
+    </p>
+    <p>
+    </p>
+    <p>
+    </p>
+{% endblock %}
+{% comment %}
+
+                FILTROS CON DJANGO
+{{"Creado por james herrera"|cut:" "}} -> el |cut:"" sirve para eliminar cierto elemento de un str, en ese caso elimina los espacios
+{{"texto de purebaaaaaaa"|lower}}pone un texto en minusculas
+{{"texto de purebaaaaaaa"|upper}}pone un texto en mayusculas
+{{texto|default:''}} -> el |default:"" sirve para poner algo por defecto en caso tal de que una variable venga vacia
+{{nombre_lista|join:', '}} -> mostrar todos los elementos de la lista separados por lo que se ponga entre comillas
+{{nombre_lista|length}} -> muestra el tamanio de la lista
+{{nombre_lista|random}} -> muestra aleatoriamente un elemento de la lista
+{{"<h1>texto entre un h1 pero se le quita el h1</h1>"|striptags}} -> quita todos los elementos html de un string
+{{"<h1>texto entre un h1 pero se le quita el h1</h1>"|striptags|wordcount}} -> cuenta la cantidad de palabras en un str
+
+
+
+pagina de documentacion sobre filtros
+https://docs.djangoproject.com/en/4.0/ref/templates/builtins/
+
+{% endcomment %}
