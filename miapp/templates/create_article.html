@@ -1,0 +1,25 @@
+{% extends 'layout.html' %}
+
+{% block title %}Crear Articulo{% endblock title %}
+
+
+{% block content %}
+    <h1>Crear Articulo</h1>
+    <form action="{% url 'save' %}" method="POST">
+        {% csrf_token %}
+        <label for="title">Titulo</label>
+        <input type="text" name="title"/>
+
+        <label for="content">Contenido</label>
+        <textarea name="content"></textarea>
+
+        <label for="public">¿quien puede ver la publicación?</label>
+        <select name="public">
+            <option disabled selected>seleccionar opcion</option>
+            <option value="1">todos</option>
+            <option value="0">nadie</option>
+        </select>
+
+        <input type="submit" value="Guardar"/>
+    </form>
+{% endblock content %}

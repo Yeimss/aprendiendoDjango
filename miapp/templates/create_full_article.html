@@ -1,0 +1,23 @@
+{% extends 'layout.html' %}
+
+{% block title %}Crear Articulo{% endblock title %}
+
+
+{% block content %}
+    <h1>Crear Articulo</h1>
+    {% if form.errors %}
+    <strong class="rojo">
+        Hay errores en el formulario
+    </strong>
+    {% endif %}
+    <form action="" method="POST">
+        {% csrf_token %}
+        {% comment "" %}
+        {{form}}    si se le pone el .as_'etiqueta' se pone cada campo dentro de una etiqueta especifica
+        {% endcomment %}
+        
+        {{form.as_p}}
+
+        <input type="submit" value="Guardar"/>
+    </form>
+{% endblock content %}

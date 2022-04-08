@@ -26,10 +26,12 @@ urlpatterns = [
     path('hola_mundo/', views.hola_mundo, name="hola_mundo"),
     path('hola_mundo/<int:redirigir>/', views.hola_mundo, name="hola_mundo"),
     path('pagina/', views.pagina, name='pagina'),
-    path('create_article/<str:title>/<str:content>/<str:public>', views.create_article, name="create_article"),
+    path('crear_articulo/<str:title>/<str:content>/<str:public>', views.crear_articulo, name="crear_articulo"),
+    path('create_article/', views.create_article, name="create_article"),
+    path('save_article/', views.save_article, name="save"),
     path('article/', views.article, name="article"),
     path('edit_article/<str:id>', views.editar_article, name="edit_article"),
     path('articulos/', views.articulos, name="articulos"),
     path('eliminar_articulo/<str:id>', views.eliminar_articulo, name="borrar"),
-
+    path('create-full-article/',views.create_full_article, name="create_full")
 ]   
