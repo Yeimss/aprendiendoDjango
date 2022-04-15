@@ -16,6 +16,8 @@ Including another URLconf
 from unicodedata import name
 from django.contrib import admin
 from django.urls import path
+#importar los settings
+from django.conf import settings
 #importar app con las views
 from miapp import views
 
@@ -35,3 +37,9 @@ urlpatterns = [
     path('eliminar_articulo/<str:id>', views.eliminar_articulo, name="borrar"),
     path('create-full-article/',views.create_full_article, name="create_full")
 ]   
+
+
+#config para cargar ficheros o imagenes
+if settings.DEBUG:
+    from django.conf.urls.static import static
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

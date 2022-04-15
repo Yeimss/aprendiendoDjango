@@ -121,7 +121,7 @@ def editar_article(r,id):
     return HttpResponse(f"Articulo Editado: {articulo.title} - {articulo.content}")
 
 def articulos(r):
-    articulos=Article.objects.order_by('-id')#[:3]
+    articulos=Article.objects.filter(public=1)#[:3]
     #se pueden poner corchetes al final que sería limite o el top que deseamos en la consulta
     #o se puede poner un rango con [n1:n2] donde n1 es el limite inferior y n2 es el limite superior
     """ 

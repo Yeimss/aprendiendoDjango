@@ -8,7 +8,10 @@
 .box p,.box h2,.box h3,.box ul{
     margin: 8px 0px;
 }
-
+.clearfix{
+    clear: both;
+    float: none;
+}
 .box ul,.box ol{
     margin-left: 20px;
     margin-bottom: 10px;
@@ -191,4 +194,48 @@ footer{
 .redirect:hover{
     text-decoration: underline;
     color: #2ba977;
+}
+/* estilos articulo */
+.article-item{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 15px;
+    border-bottom: 2px solid #eee;
+    clear: both;
+}
+.article-item .image{
+    width: 200px;
+    height: 200px;
+    float: left;
+    overflow: hidden;
+}
+.article-item .image img{
+    height: 200px;
+}
+.article-item .data{
+    float: left;
+    padding: 15px;
+    padding-top: 0px;
+}
+.article-item h2{
+    display: block;
+    font-size: 26px;
+    color: #333;
+    margin-bottom: 10px;
+}
+.article-item span.date{
+    display: block;
+    font-size:15px;
+    color: gray;
+    margin-bottom: 10px;
+}
+.btn{
+    padding: 10px;
+    background: rgb(236, 109, 109);
+    color: white;
+    border: 1px solid black;
+    display: block;
+    margin-top: 15px;
+    width: 120px;
+    text-align: center;
 }
